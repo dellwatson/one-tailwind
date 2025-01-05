@@ -8,8 +8,11 @@ export default {
     one({
       web: {
         defaultRenderMode: "ssg",
+        deploy: "vercel",
       },
-
+      server: {
+        platform: "vercel",
+      },
       app: {
         // set to the key of your native app
         // will call AppRegistry.registerComponent(app.key)
