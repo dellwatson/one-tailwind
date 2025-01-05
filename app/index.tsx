@@ -3,6 +3,7 @@ import { Text, YStack } from "tamagui";
 import TailwindContainer from "~/code/TailwindContainer.web";
 import { ToggleThemeButton } from "~/code/ToggleThemeButton";
 import oneBall from "~/public/app-icon.png";
+import "./_layout.css";
 
 export function HomePage() {
   return (

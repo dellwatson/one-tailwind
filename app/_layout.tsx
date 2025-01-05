@@ -1,10 +1,10 @@
-import './_layout.css'
-import './tamagui.css'
+import "./_layout.css";
+import "./tamagui.css";
 
-import { SchemeProvider, useColorScheme } from '@vxrn/color-scheme'
-import { LoadProgressBar, Slot } from 'one'
-import { isWeb, TamaguiProvider } from 'tamagui'
-import config from '~/config/tamagui/tamagui.config'
+import { SchemeProvider, useColorScheme } from "@vxrn/color-scheme";
+import { LoadProgressBar, Slot } from "one";
+import { isWeb, TamaguiProvider } from "tamagui";
+import config from "~/config/tamagui/tamagui.config";
 
 export default function Layout() {
   return (
@@ -13,7 +13,10 @@ export default function Layout() {
         <>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=5"
+          />
           <link rel="icon" href="/favicon.svg" />
         </>
       )}
@@ -22,19 +25,29 @@ export default function Layout() {
 
       <SchemeProvider>
         <TamaguiRootProvider>
+          <div>
+            how about this
+            <div className="bg-red-500 p-4 border uppercase">
+              this is bg tailwind
+            </div>
+          </div>
           <Slot />
         </TamaguiRootProvider>
       </SchemeProvider>
     </>
-  )
+  );
 }
 
 const TamaguiRootProvider = ({ children }: { children: React.ReactNode }) => {
-  const [scheme] = useColorScheme()
+  const [scheme] = useColorScheme();
 
   return (
-    <TamaguiProvider disableInjectCSS config={config} defaultTheme={scheme} disableRootThemeClass>
+    <TamaguiProvider
+      disableInjectCSS
+      config={config}
+      defaultTheme={scheme}
+      disableRootThemeClass>
       {children}
     </TamaguiProvider>
-  )
-}
+  );
+};
